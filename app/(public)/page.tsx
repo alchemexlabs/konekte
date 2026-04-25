@@ -54,7 +54,7 @@ export default function LandingPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/resources">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-cream/30 text-cream hover:bg-cream hover:text-navy">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-cream text-cream bg-transparent hover:bg-cream hover:text-navy hover:border-cream">
                     {t("hero.cta.explore")}
                   </Button>
                 </Link>
