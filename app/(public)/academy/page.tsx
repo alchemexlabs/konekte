@@ -71,33 +71,28 @@ export default function AcademyPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 bg-navy text-cream overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,_white_0%,_transparent_50%)]" />
-        </div>
-        
+      <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 bg-secondary overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Co-branding lockup */}
           <div className="flex items-center gap-4 mb-8">
-            <div className="flex items-center gap-2 px-4 py-2 bg-cream/10 rounded-lg">
-              <Building2 className="h-5 w-5" />
-              <span className="text-sm font-medium">Silicon Valley Bank</span>
+            <div className="flex items-center gap-2 px-4 py-2 bg-navy/10 rounded-lg">
+              <Building2 className="h-5 w-5 text-navy" />
+              <span className="text-sm font-medium text-navy">Silicon Valley Bank</span>
             </div>
-            <span className="text-cream/40">×</span>
-            <div className="flex items-center gap-2 px-4 py-2 bg-cream/10 rounded-lg">
-              <span className="text-sm font-medium">Konekte</span>
+            <span className="text-muted-foreground">×</span>
+            <div className="flex items-center gap-2 px-4 py-2 bg-navy/10 rounded-lg">
+              <span className="text-sm font-medium text-navy">Konekte</span>
             </div>
           </div>
 
           <div className="max-w-3xl">
-            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium leading-tight mb-6 text-balance">
-              {language === "en" 
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium text-navy leading-tight mb-6 text-balance">
+              {language === "en"
                 ? "Silicon Valley Bank Financial Literacy Academy"
                 : "Akademi Edikasyon Finansyè Silicon Valley Bank"
               }
             </h1>
-            <p className="text-xl text-cream/80 mb-8 leading-relaxed">
+            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
               {language === "en"
                 ? "8 modules. Built for Little Haiti entrepreneurs and families. Free. Bilingual. Earn an SVB-cobranded certificate."
                 : "8 modil. Bati pou antreprenè ak fanmi Little Haiti. Gratis. De lang. Jwenn yon sètifika SVB."
@@ -105,17 +100,17 @@ export default function AcademyPage() {
             </p>
 
             <div className="flex flex-wrap gap-3 mb-10">
-              <Badge className="bg-cream/20 text-cream border-0 py-1.5 px-3">
+              <Badge className="bg-navy/10 text-navy border-0 py-1.5 px-3">
                 <Clock className="h-4 w-4 mr-2" />
                 8 {language === "en" ? "modules" : "modil"}
               </Badge>
-              <Badge className="bg-cream/20 text-cream border-0 py-1.5 px-3">
+              <Badge className="bg-navy/10 text-navy border-0 py-1.5 px-3">
                 ~6 {language === "en" ? "hours" : "èdtan"}
               </Badge>
-              <Badge className="bg-sage text-white border-0 py-1.5 px-3">
+              <Badge className="bg-sage/10 text-sage border-0 py-1.5 px-3">
                 {language === "en" ? "Free" : "Gratis"}
               </Badge>
-              <Badge className="bg-coral text-white border-0 py-1.5 px-3">
+              <Badge className="bg-coral/10 text-coral border-0 py-1.5 px-3">
                 <Award className="h-4 w-4 mr-2" />
                 {language === "en" ? "SVB Certificate" : "Sètifika SVB"}
               </Badge>
@@ -123,12 +118,12 @@ export default function AcademyPage() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/sign-up">
-                <Button size="lg" className="bg-coral hover:bg-coral/90 text-white w-full sm:w-auto">
+                <Button size="lg" className="bg-coral hover:bg-coral/90 text-white w-full sm:w-auto shadow-lg">
                   {language === "en" ? "Start learning for free" : "Kòmanse aprann gratis"}
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-cream/30 text-cream hover:bg-cream/10 w-full sm:w-auto">
+              <Button size="lg" variant="outline" className="border-navy text-navy hover:bg-navy hover:text-cream w-full sm:w-auto">
                 <Play className="mr-2 h-4 w-4" />
                 {language === "en" ? "Watch preview" : "Gade apèsi"}
               </Button>
@@ -294,19 +289,19 @@ export default function AcademyPage() {
           </div>
 
           {/* Module 1 highlight */}
-          <Card className="mt-12 bg-navy text-cream rounded-2xl border-0 overflow-hidden">
+          <Card className="mt-12 bg-card rounded-2xl border shadow-lg overflow-hidden">
             <div className="grid lg:grid-cols-2 items-center">
               <CardContent className="p-8 lg:p-12">
-                <Badge className="bg-cream/20 text-cream border-0 mb-4">
+                <Badge className="bg-coral/10 text-coral border-0 mb-4">
                   {language === "en" ? "Featured in Module 1" : "Prezante nan Modil 1"}
                 </Badge>
-                <h3 className="font-serif text-2xl lg:text-3xl font-medium mb-4">
-                  {language === "en" 
+                <h3 className="font-serif text-2xl lg:text-3xl font-medium text-navy mb-4">
+                  {language === "en"
                     ? "Building Credit Beyond the FICO Score"
                     : "Bati Kredi Pi Lwen ke Skor FICO"
                   }
                 </h3>
-                <p className="text-cream/80 mb-6 leading-relaxed">
+                <p className="text-muted-foreground mb-6 leading-relaxed">
                   {language === "en"
                     ? "Learn how alternative underwriting considers your utility and rental payment history. Many community members have been paying bills on time for years — that matters, and lenders are starting to recognize it."
                     : "Aprann kijan evalyasyon altènatif konsidere istwa peman sèvis piblik ak lwaye ou. Anpil manm kominote yo te peye fakti alè pandan plizyè ane — sa enpòtan, epi pretè yo kòmanse rekonèt li."
@@ -314,7 +309,7 @@ export default function AcademyPage() {
                 </p>
                 <div className="flex items-center gap-4">
                   <CheckCircle2 className="h-5 w-5 text-sage" />
-                  <span className="text-sm">{language === "en" ? "Bilingual staff available" : "Pèsonèl de lang disponib"}</span>
+                  <span className="text-sm text-muted-foreground">{language === "en" ? "Bilingual staff available" : "Pèsonèl de lang disponib"}</span>
                 </div>
               </CardContent>
               <div className="relative h-64 lg:h-full lg:min-h-[300px]">
@@ -378,23 +373,23 @@ export default function AcademyPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 lg:py-28 bg-navy text-cream">
+      <section className="py-20 lg:py-28 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Sparkles className="h-10 w-10 text-coral mx-auto mb-6" />
-          <h2 className="font-serif text-3xl lg:text-4xl font-medium mb-6">
-            {language === "en" 
+          <h2 className="font-serif text-3xl lg:text-4xl font-medium text-navy mb-6">
+            {language === "en"
               ? "Ready to start your financial education journey?"
               : "Pare pou kòmanse vwayaj edikasyon finansyè ou?"
             }
           </h2>
-          <p className="text-cream/70 mb-8 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             {language === "en"
               ? "Join thousands of Little Haiti residents who are building credit, understanding lending, and connecting to capital."
               : "Rantre nan milye rezidan Little Haiti k ap bati kredi, konprann prè, epi konekte ak kapital."
             }
           </p>
           <Link href="/sign-up">
-            <Button size="lg" className="bg-coral hover:bg-coral/90 text-white">
+            <Button size="lg" className="bg-coral hover:bg-coral/90 text-white shadow-lg">
               {language === "en" ? "Create your free account" : "Kreye kont gratis ou"}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>

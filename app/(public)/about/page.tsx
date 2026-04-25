@@ -188,13 +188,13 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-primary py-16 md:py-24">
+      <section className="bg-secondary py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-4 text-balance">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-secondary-foreground mb-4 text-balance">
               {t.title}
             </h1>
-            <p className="text-xl text-primary-foreground/90">{t.subtitle}</p>
+            <p className="text-xl text-secondary-foreground/80">{t.subtitle}</p>
           </div>
         </div>
       </section>
@@ -290,12 +290,12 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary">
+      <section className="py-16 bg-card">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="font-serif text-3xl font-bold text-primary-foreground mb-4">{t.cta.title}</h2>
-            <p className="text-primary-foreground/90 mb-8">{t.cta.text}</p>
-            <Button size="lg" variant="secondary" asChild>
+            <h2 className="font-serif text-3xl font-bold text-navy mb-4">{t.cta.title}</h2>
+            <p className="text-muted-foreground mb-8">{t.cta.text}</p>
+            <Button size="lg" className="bg-coral hover:bg-coral/90 text-white shadow-lg" asChild>
               <Link href="/contact">
                 {t.cta.button}
                 <ArrowRight className="ml-2 h-4 w-4" />

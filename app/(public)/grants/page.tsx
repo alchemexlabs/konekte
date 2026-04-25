@@ -82,13 +82,13 @@ export default function GrantsPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-primary py-16 md:py-24">
+      <section className="bg-secondary py-16 md:py-24">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mb-4 text-balance">
+            <h1 className="font-serif text-4xl md:text-5xl font-bold text-secondary-foreground mb-4 text-balance">
               {t.title}
             </h1>
-            <p className="text-xl text-primary-foreground/90">{t.subtitle}</p>
+            <p className="text-xl text-secondary-foreground/80">{t.subtitle}</p>
           </div>
         </div>
       </section>
