@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
 import { useLanguage } from "@/lib/language-context"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -10,13 +9,8 @@ import { Menu } from "lucide-react"
 
 export function Navigation() {
   const { language, toggleLanguage, t } = useLanguage()
-  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-
-  // Only use transparent navbar on home page
-  const isHomePage = pathname === "/"
-  const shouldBeTransparent = isHomePage && !isScrolled
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,25 +31,19 @@ export function Navigation() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        shouldBeTransparent
-          ? "bg-transparent"
-          : "bg-card/95 backdrop-blur-md shadow-sm border-b border-border"
+        isScrolled
+          ? "bg-card/95 backdrop-blur-md shadow-sm border-b border-border"
+          : "bg-card/80 backdrop-blur-sm border-b border-border/50"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${
-              shouldBeTransparent ? "bg-cream" : "bg-navy"
-            }`}>
-              <span className={`font-bold text-lg transition-colors ${
-                shouldBeTransparent ? "text-navy" : "text-cream"
-              }`}>K</span>
+            <div className="w-8 h-8 bg-navy rounded-lg flex items-center justify-center">
+              <span className="text-cream font-bold text-lg">K</span>
             </div>
-            <span className={`text-xl font-semibold transition-colors ${
-              shouldBeTransparent ? "text-cream drop-shadow-sm" : "text-navy"
-            }`}>Konekte</span>
+            <span className="text-xl font-semibold text-navy">Konekte</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -64,11 +52,7 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors ${
-                  shouldBeTransparent
-                    ? "text-cream/90 hover:text-cream drop-shadow-sm"
-                    : "text-foreground/80 hover:text-foreground"
-                }`}
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
               >
                 {link.label}
               </Link>
@@ -80,32 +64,16 @@ export function Navigation() {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className={`hidden sm:flex items-center gap-1 text-sm font-medium transition-colors px-2 py-1 rounded-md ${
-                shouldBeTransparent
-                  ? "text-cream/80 hover:text-cream hover:bg-white/10 drop-shadow-sm"
-                  : "text-foreground/70 hover:text-foreground hover:bg-secondary"
-              }`}
+              className="hidden sm:flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors px-2 py-1 rounded-md hover:bg-secondary"
             >
-              <span className={shouldBeTransparent
-                ? (language === "en" ? "text-cream font-semibold" : "")
-                : (language === "en" ? "text-foreground font-semibold" : "")
-              }>EN</span>
-              <span className={shouldBeTransparent ? "text-cream/50" : "text-foreground/40"}>|</span>
-              <span className={shouldBeTransparent
-                ? (language === "kr" ? "text-cream font-semibold" : "")
-                : (language === "kr" ? "text-foreground font-semibold" : "")
-              }>KR</span>
+              <span className={language === "en" ? "text-foreground font-semibold" : ""}>EN</span>
+              <span className="text-foreground/40">|</span>
+              <span className={language === "kr" ? "text-foreground font-semibold" : ""}>KR</span>
             </button>
 
             {/* Sign In */}
             <Link href="/login" className="hidden sm:block">
-              <Button
-                variant="ghost"
-                size="sm"
-                className={`text-sm transition-colors ${
-                  shouldBeTransparent ? "text-cream hover:text-cream hover:bg-white/10" : ""
-                }`}
-              >
+              <Button variant="ghost" size="sm" className="text-sm">
                 {t("nav.signIn")}
               </Button>
             </Link>
@@ -120,11 +88,7 @@ export function Navigation() {
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="lg:hidden">
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className={shouldBeTransparent ? "text-cream hover:text-cream hover:bg-white/10" : ""}
-                >
+                <Button variant="ghost" size="icon">
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Open menu</span>
                 </Button>

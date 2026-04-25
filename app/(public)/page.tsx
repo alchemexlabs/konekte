@@ -38,23 +38,23 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-br from-navy via-navy to-[#1A3A5C]">
+      <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden bg-secondary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left content */}
             <div className="max-w-xl">
-              <Badge variant="secondary" className="mb-6 bg-sage/20 text-sage border-sage/30 hover:bg-sage/30">
+              <Badge variant="secondary" className="mb-6 bg-sage/10 text-sage border-sage/20 hover:bg-sage/20">
                 {language === "en" ? "Little Haiti, Miami" : "Little Haiti, Miami"}
               </Badge>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium text-cream leading-tight mb-6 text-balance">
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium text-navy leading-tight mb-6 text-balance">
                 {t("hero.headline")}
               </h1>
-              <p className="text-lg text-cream/80 mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                 {t("hero.subheadline")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/resources">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-cream text-cream bg-transparent hover:bg-cream hover:text-navy hover:border-cream">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-navy text-navy hover:bg-navy hover:text-cream">
                     {t("hero.cta.explore")}
                   </Button>
                 </Link>
@@ -89,7 +89,7 @@ export default function LandingPage() {
                   />
                 </div>
                 {/* Stats card */}
-                <Card className="absolute bottom-16 right-8 shadow-xl bg-cream border-0">
+                <Card className="absolute bottom-16 right-8 shadow-xl bg-card border-0">
                   <CardContent className="p-4">
                     <div className="text-3xl font-bold text-navy">$16B</div>
                     <div className="text-sm text-muted-foreground">Community investment</div>
@@ -184,10 +184,10 @@ export default function LandingPage() {
       </section>
 
       {/* How Konekte Works */}
-      <section className="py-20 lg:py-28 bg-navy text-cream">
+      <section className="py-20 lg:py-28 bg-card">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl lg:text-4xl font-medium mb-4">
+            <h2 className="font-serif text-3xl lg:text-4xl font-medium text-navy mb-4">
               {t("howItWorks.title")}
             </h2>
           </div>
@@ -195,56 +195,56 @@ export default function LandingPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Step 1: Apply */}
             <div className="text-center">
-              <div className="w-16 h-16 bg-cream/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-navy/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <FileCheck className="h-8 w-8 text-coral" />
               </div>
               <div className="text-sm text-coral font-medium mb-2">01</div>
-              <h3 className="text-xl font-medium mb-3">{t("howItWorks.step1")}</h3>
-              <p className="text-cream/70 text-sm">
-                {language === "en" 
-                  ? "Tell us about your business or household needs" 
+              <h3 className="text-xl font-medium text-navy mb-3">{t("howItWorks.step1")}</h3>
+              <p className="text-muted-foreground text-sm">
+                {language === "en"
+                  ? "Tell us about your business or household needs"
                   : "Di nou sou biznis ou oswa bezwen kay ou"}
               </p>
             </div>
 
             {/* Step 2: Verify */}
             <div className="text-center">
-              <div className="w-16 h-16 bg-cream/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-navy/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <ShieldCheck className="h-8 w-8 text-coral" />
               </div>
               <div className="text-sm text-coral font-medium mb-2">02</div>
-              <h3 className="text-xl font-medium mb-3">{t("howItWorks.step2")}</h3>
-              <p className="text-cream/70 text-sm">
-                {language === "en" 
-                  ? "We confirm eligibility using alternative underwriting" 
+              <h3 className="text-xl font-medium text-navy mb-3">{t("howItWorks.step2")}</h3>
+              <p className="text-muted-foreground text-sm">
+                {language === "en"
+                  ? "We confirm eligibility using alternative underwriting"
                   : "Nou konfime kalifikasyon ak evalyasyon altènatif"}
               </p>
             </div>
 
             {/* Step 3: Match */}
             <div className="text-center">
-              <div className="w-16 h-16 bg-cream/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-navy/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Sparkles className="h-8 w-8 text-coral" />
               </div>
               <div className="text-sm text-coral font-medium mb-2">03</div>
-              <h3 className="text-xl font-medium mb-3">{t("howItWorks.step3")}</h3>
-              <p className="text-cream/70 text-sm">
-                {language === "en" 
-                  ? "Get matched to grants, loans, and resources" 
+              <h3 className="text-xl font-medium text-navy mb-3">{t("howItWorks.step3")}</h3>
+              <p className="text-muted-foreground text-sm">
+                {language === "en"
+                  ? "Get matched to grants, loans, and resources"
                   : "Jwenn match ak sibvansyon, prè, ak resous"}
               </p>
             </div>
 
             {/* Step 4: Disburse */}
             <div className="text-center">
-              <div className="w-16 h-16 bg-cream/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-navy/10 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Banknote className="h-8 w-8 text-coral" />
               </div>
               <div className="text-sm text-coral font-medium mb-2">04</div>
-              <h3 className="text-xl font-medium mb-3">{t("howItWorks.step4")}</h3>
-              <p className="text-cream/70 text-sm">
-                {language === "en" 
-                  ? "Receive funds via Same-Day ACH through Modern Treasury" 
+              <h3 className="text-xl font-medium text-navy mb-3">{t("howItWorks.step4")}</h3>
+              <p className="text-muted-foreground text-sm">
+                {language === "en"
+                  ? "Receive funds via Same-Day ACH through Modern Treasury"
                   : "Resevwa fon atravè ACH Menm Jou via Modern Treasury"}
               </p>
             </div>
