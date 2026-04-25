@@ -40,10 +40,16 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-navy rounded-lg flex items-center justify-center">
-              <span className="text-cream font-bold text-lg">K</span>
+            <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${
+              isScrolled ? "bg-navy" : "bg-cream"
+            }`}>
+              <span className={`font-bold text-lg transition-colors ${
+                isScrolled ? "text-cream" : "text-navy"
+              }`}>K</span>
             </div>
-            <span className="text-xl font-semibold text-navy">Konekte</span>
+            <span className={`text-xl font-semibold transition-colors ${
+              isScrolled ? "text-navy" : "text-cream drop-shadow-sm"
+            }`}>Konekte</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -52,7 +58,11 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  isScrolled
+                    ? "text-foreground/80 hover:text-foreground"
+                    : "text-cream/90 hover:text-cream drop-shadow-sm"
+                }`}
               >
                 {link.label}
               </Link>
@@ -64,23 +74,39 @@ export function Navigation() {
             {/* Language Toggle */}
             <button
               onClick={toggleLanguage}
-              className="hidden sm:flex items-center gap-1 text-sm font-medium text-foreground/70 hover:text-foreground transition-colors px-2 py-1 rounded-md hover:bg-secondary"
+              className={`hidden sm:flex items-center gap-1 text-sm font-medium transition-colors px-2 py-1 rounded-md ${
+                isScrolled
+                  ? "text-foreground/70 hover:text-foreground hover:bg-secondary"
+                  : "text-cream/80 hover:text-cream hover:bg-white/10 drop-shadow-sm"
+              }`}
             >
-              <span className={language === "en" ? "text-foreground font-semibold" : ""}>EN</span>
-              <span className="text-foreground/40">|</span>
-              <span className={language === "kr" ? "text-foreground font-semibold" : ""}>KR</span>
+              <span className={isScrolled
+                ? (language === "en" ? "text-foreground font-semibold" : "")
+                : (language === "en" ? "text-cream font-semibold" : "")
+              }>EN</span>
+              <span className={isScrolled ? "text-foreground/40" : "text-cream/50"}>|</span>
+              <span className={isScrolled
+                ? (language === "kr" ? "text-foreground font-semibold" : "")
+                : (language === "kr" ? "text-cream font-semibold" : "")
+              }>KR</span>
             </button>
 
             {/* Sign In */}
             <Link href="/login" className="hidden sm:block">
-              <Button variant="ghost" size="sm" className="text-sm">
+              <Button
+                variant="ghost"
+                size="sm"
+                className={`text-sm transition-colors ${
+                  isScrolled ? "" : "text-cream hover:text-cream hover:bg-white/10"
+                }`}
+              >
                 {t("nav.signIn")}
               </Button>
             </Link>
 
             {/* Primary CTA */}
             <Link href="/sign-up" className="hidden sm:block">
-              <Button size="sm" className="bg-coral hover:bg-coral/90 text-white">
+              <Button size="sm" className="bg-coral hover:bg-coral/90 text-white shadow-sm">
                 {t("nav.getMatched")}
               </Button>
             </Link>
@@ -88,7 +114,11 @@ export function Navigation() {
             {/* Mobile Menu */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild className="lg:hidden">
-                <Button variant="ghost" size="icon">
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className={isScrolled ? "" : "text-cream hover:text-cream hover:bg-white/10"}
+                >
                   <Menu className="h-5 w-5" />
                   <span className="sr-only">Open menu</span>
                 </Button>

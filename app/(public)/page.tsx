@@ -38,28 +38,28 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden">
+      <section className="relative pt-24 lg:pt-32 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-br from-navy via-navy to-[#1A3A5C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left content */}
             <div className="max-w-xl">
-              <Badge variant="secondary" className="mb-6 bg-sage/10 text-sage border-sage/20 hover:bg-sage/20">
+              <Badge variant="secondary" className="mb-6 bg-sage/20 text-sage border-sage/30 hover:bg-sage/30">
                 {language === "en" ? "Little Haiti, Miami" : "Little Haiti, Miami"}
               </Badge>
-              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium text-navy leading-tight mb-6 text-balance">
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-medium text-cream leading-tight mb-6 text-balance">
                 {t("hero.headline")}
               </h1>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-cream/80 mb-8 leading-relaxed">
                 {t("hero.subheadline")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/resources">
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-navy text-navy hover:bg-navy hover:text-cream">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-cream/30 text-cream hover:bg-cream hover:text-navy">
                     {t("hero.cta.explore")}
                   </Button>
                 </Link>
                 <Link href="/academy">
-                  <Button size="lg" className="w-full sm:w-auto bg-coral hover:bg-coral/90 text-white">
+                  <Button size="lg" className="w-full sm:w-auto bg-coral hover:bg-coral/90 text-white shadow-lg">
                     {t("hero.cta.course")}
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -89,7 +89,7 @@ export default function LandingPage() {
                   />
                 </div>
                 {/* Stats card */}
-                <Card className="absolute bottom-16 right-8 shadow-lg">
+                <Card className="absolute bottom-16 right-8 shadow-xl bg-cream border-0">
                   <CardContent className="p-4">
                     <div className="text-3xl font-bold text-navy">$16B</div>
                     <div className="text-sm text-muted-foreground">Community investment</div>
